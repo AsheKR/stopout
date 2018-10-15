@@ -1,0 +1,15 @@
+{% extends 'school/base.html' %}
+
+{% block content %}
+
+<div class="card">
+  <ul class="list-group list-group-flush">
+    {% for school in school_list %}
+
+        <li class="list-group-item"><a href="{% url 'school_detail' pk=school.pk %}">{{ school.school_name }}</a></li>
+
+    {% endfor %}
+  </ul>
+</div>
+
+{% endblock %}

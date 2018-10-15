@@ -1,0 +1,22 @@
+{% extends 'school/base.html' %}
+
+{% block content %}
+
+
+<div class="card">
+  <ul class="list-group list-group-flush">
+    {% for student in student_list %}
+
+        <li class="list-group-item">
+            <div class="card-body">
+                <p>이름 : <a class="card-link" href="{% url 'student_detail' pk=student.pk %}">{{ student.student_name }}</a></p>
+                <p>학교 : <a class="card-link" href="{% url 'school_detail' pk=student.now_school.pk %}">{{ student.now_school }}</a></p>
+            </div>
+
+        </li>
+
+    {% endfor %}
+  </ul>
+</div>
+
+{% endblock %}
